@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:id="@+id/relativeLayout"
+
+    android:background="@color/purple_200">
+
+    <TextView
+        android:id="@+id/transactionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
+        android:text="Name: "
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/transactionType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
+        android:text="Type: "
+        android:textColor="@color/black"
+        android:layout_below="@+id/transactionName"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/transactionNominal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
+        android:text="Nominal: "
+        android:textColor="@color/black"
+        android:layout_below="@+id/transactionType"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/transactionDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
+        android:text="Date: "
+        android:textColor="@color/black"
+        android:layout_below="@+id/transactionNominal"
+        android:textSize="16sp"/>
+
+</RelativeLayout>
