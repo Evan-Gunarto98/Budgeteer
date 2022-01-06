@@ -50,6 +50,7 @@ public class TransactionDBFunction {
         db.close();
     }
 
+    //get all transaction data
     public ArrayList<Transaction> getAllTransaction(){
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         ArrayList<Transaction> listTransaction = new ArrayList<>();
@@ -70,6 +71,28 @@ public class TransactionDBFunction {
         return listTransaction;
     }
 
+    //to gate the transaction data based on selected date
+    public ArrayList<Transaction> getAllTransactionbyDate(String date1){
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
+        ArrayList<Transaction> listTransaction = new ArrayList<>();
+
+        Transaction transaction = null;
+        System.out.println(date1);
+        Cursor cursor = db.rawQuery("SELECT * FROM msproduct WHERE date = ? " , new String[]{date1});
+
+
+        while(cursor.moveToNext()){
+            transaction = new Transaction();
+            transaction.id = cursor.getLong(cursor.getColumnIndexOrThrow("id"));
+            transaction.name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
+            transaction.type = cursor.getString(cursor.getColumnIndexOrThrow("type"));
+            transaction.nominal = cursor.getInt(cursor.getColumnIndexOrThrow("nominal"));
+            transaction.date = cursor.getString(cursor.getColumnIndexOrThrow("date"));
+            listTransaction.add(transaction);
+        }
+
+        return listTransaction;
+    }
 
 
 }

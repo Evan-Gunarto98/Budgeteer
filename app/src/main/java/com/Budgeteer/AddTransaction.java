@@ -78,8 +78,11 @@ public class AddTransaction extends AppCompatActivity {
         transaction.name = txtName.getText().toString();
         transaction.nominal = Integer.parseInt(txtNominal.getText().toString());
         transaction.type = chooseType.getText().toString();
+
         transaction.date = getDate();
         transactionDBFunction.insertTransaction(transaction);
+
+
 
         txtName.setText("");
         chooseType.setText("");
@@ -87,6 +90,7 @@ public class AddTransaction extends AppCompatActivity {
 
         Intent intent = getIntent();
         intent = new Intent(this,MainActivity.class);
+
         startActivity(intent);
     }
 

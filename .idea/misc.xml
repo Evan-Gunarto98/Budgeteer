@@ -7,8 +7,10 @@
         <entry key="..\:/Users/adria/AndroidStudioProjects/Budgeteer/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1765625" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/Budgeteer/app/src/main/res/layout/activity_main.xml" value="0.28532608695652173" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/Budgeteer/app/src/main/res/layout/add_transaction.xml" value="0.264" />
+        <entry key="..\:/Users/adria/AndroidStudioProjects/Budgeteer/app/src/main/res/layout/history.xml" value="0.24139492753623187" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/Budgeteer/app/src/main/res/layout/list_transaction.xml" value="0.4" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/Budgeteer/app/src/main/res/layout/rv_transaction.xml" value="0.19429347826086957" />
+        <entry key="..\:/Users/adria/AndroidStudioProjects/Budgeteer/app/src/main/res/layout/set_limit.xml" value="0.254981884057971" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/Budgeteer/app/src/main/res/layout/transaction.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/Budgeteer/app/src/main/res/menu/menu_product.xml" value="0.2989583333333333" />
       </map>
