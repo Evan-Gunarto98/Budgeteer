@@ -10,6 +10,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.huawei.hms.ads.AdParam;
+import com.huawei.hms.ads.HwAds;
+import com.huawei.hms.ads.banner.BannerView;
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvTransaction;
@@ -18,11 +22,17 @@ public class MainActivity extends AppCompatActivity {
     TextView balanceView,limitView;
     Bundle bundle;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //ads
+        HwAds.init(this);
+        BannerView bannerView = findViewById(R.id.hw_banner_view);
+        bannerView.setBannerRefresh(60);
+        AdParam adParam = new AdParam.Builder().build();
+        bannerView.loadAd(adParam);
 
         balanceView = findViewById(R.id.balanceView);
        // limitView = findViewById(R.id.limitView);
@@ -102,4 +112,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void account(View view) {
+        Intent intent;
+        intent = new Intent(this, QuickStartActivity.class);
+        startActivity(intent);
+    }
 }
