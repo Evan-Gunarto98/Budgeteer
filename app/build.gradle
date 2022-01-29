@@ -55,6 +55,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
+    implementation "com.huawei.agconnect:agconnect-auth:1.6.3.300"
     implementation 'com.huawei.hms:hwid:6.3.0.301'
     implementation 'com.huawei.hms:ads:3.4.51.300'
 }
