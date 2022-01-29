@@ -28,6 +28,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.huawei.hmf.tasks.OnFailureListener;
@@ -56,7 +57,8 @@ public class QuickStartActivity extends AppCompatActivity {
 	// 用户自定义日志标记
 	// User-defined log mark
 	private static final String TAG = "Account";
-	private TextView logTextView;
+	private TextView logTextView, txtProfileName;
+	ImageView imgProfile;
 	ActivityResultLauncher<Intent> resultLauncher;
 
 	@Override
@@ -65,6 +67,10 @@ public class QuickStartActivity extends AppCompatActivity {
 		// activity_huawei_quickstart为自定义布局文件名称
 		// activity_huawei_quickstart is the name of the custom layout file
 		setContentView(R.layout.activity_huawei_quickstart);
+
+		txtProfileName = findViewById(R.id.txtProfileName);
+		imgProfile = findViewById(R.id.imgProfile);
+
 		findViewById(R.id.HuaweiIdAuthButton).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -84,6 +90,7 @@ public class QuickStartActivity extends AppCompatActivity {
 				cancelAuthorization();
 			}
 		});
+
 		logTextView = (TextView) findViewById(R.id.LogText);
 
 		resultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -146,6 +153,8 @@ public class QuickStartActivity extends AppCompatActivity {
 				// 静默登录成功，处理返回的帐号对象AuthAccount，获取帐号信息
 				// Silent sign in is successful, the returned account object AuthAccount is processed,account information is obtained and processed
 				showLog("silent sign in success");
+				txtProfileName.setText(authAccount.getDisplayName());
+				imgProfile.setImageURI(authAccount.getAvatarUri());
 				dealWithResultOfSignIn(authAccount);
 			}
 		});
@@ -219,6 +228,8 @@ public class QuickStartActivity extends AppCompatActivity {
 			@Override
 			public void onSuccess(Void aVoid) {
 				Log.i(TAG, "signOut Success");
+				txtProfileName.setText("Not logged in");
+				imgProfile.setImageResource(R.drawable.ic_account);
 				showLog("signOut Success");
 			}
 		}).addOnFailureListener(new OnFailureListener() {

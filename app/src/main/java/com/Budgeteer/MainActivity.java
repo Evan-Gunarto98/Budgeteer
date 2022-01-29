@@ -1,15 +1,19 @@
 package com.Budgeteer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.huawei.hms.ads.AdParam;
 import com.huawei.hms.ads.HwAds;
 import com.huawei.hms.ads.banner.BannerView;
@@ -20,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TransactionDBFunction transactionDBFunction;
     TransactionAdapter adapter;
     TextView balanceView,limitView;
+    BottomNavigationView bottomNavigation;
     Bundle bundle;
 
     @Override
@@ -33,6 +38,41 @@ public class MainActivity extends AppCompatActivity {
         bannerView.setBannerRefresh(60);
         AdParam adParam = new AdParam.Builder().build();
         bannerView.loadAd(adParam);
+
+        //nav
+        bottomNavigation = findViewById(R.id.bottomNav);
+
+        bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent intent;
+
+                switch(item.getItemId())
+                {
+                    case R.id.history:
+                        intent = new Intent(MainActivity.this, History.class);
+                        break;
+
+                    case R.id.add:
+                        intent = new Intent(MainActivity.this, AddTransaction.class);
+                        intent.putExtra("insertType","add");
+                        break;
+
+                    case R.id.account:
+                        intent = new Intent(MainActivity.this, QuickStartActivity.class);
+                        break;
+
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + item.getItemId());
+                }
+                startActivity(intent);
+
+                return false;
+            }
+        });
+
+        bottomNavigation.getMenu().getItem(0).setChecked(false);
+        bottomNavigation.getMenu().getItem(1).setChecked(true);
 
         balanceView = findViewById(R.id.balanceView);
        // limitView = findViewById(R.id.limitView);
