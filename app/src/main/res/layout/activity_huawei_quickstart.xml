@@ -67,18 +67,18 @@
         android:layout_gravity="center_horizontal"
         android:text="sign out"/>
 
-    <Button
-        android:id="@+id/HuaweiIdCancelAuthButton"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:textColor="@color/white"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center_horizontal"
-        android:text="cancel auth"/>
+<!--    <Button-->
+<!--        android:id="@+id/HuaweiIdCancelAuthButton"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:text="cancel auth"/>-->
 
     <TextView
         android:id="@+id/LogText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         />

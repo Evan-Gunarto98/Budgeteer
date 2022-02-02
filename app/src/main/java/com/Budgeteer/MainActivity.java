@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //ads
-        HwAds.init(this);
-        BannerView bannerView = findViewById(R.id.hw_banner_view);
-        bannerView.setBannerRefresh(60);
-        AdParam adParam = new AdParam.Builder().build();
-        bannerView.loadAd(adParam);
+//        HwAds.init(this);
+//        BannerView bannerView = findViewById(R.id.hw_banner_view);
+//        bannerView.setBannerRefresh(60);
+//        AdParam adParam = new AdParam.Builder().build();
+//        bannerView.loadAd(adParam);
 
         //nav
         bottomNavigation = findViewById(R.id.bottomNav);

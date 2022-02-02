@@ -75,12 +75,12 @@ public class QuickStartActivity extends AppCompatActivity {
 			}
 		});
 
-		findViewById(R.id.HuaweiIdCancelAuthButton).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				cancelAuthorization();
-			}
-		});
+//		findViewById(R.id.HuaweiIdCancelAuthButton).setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				cancelAuthorization();
+//			}
+//		});
 
 		logTextView = (TextView) findViewById(R.id.LogText);
 
@@ -152,24 +152,24 @@ public class QuickStartActivity extends AppCompatActivity {
 		});
 	}
 
-	private void cancelAuthorization() {
-		if (mAuthService == null) {
-			return;
-		}
-		Task<Void> task = mAuthService.cancelAuthorization();
-		task.addOnSuccessListener(new OnSuccessListener<Void>() {
-			@Override
-			public void onSuccess(Void aVoid) {
-				showLog("cancel authorization success");
-			}
-		});
-		task.addOnFailureListener(new OnFailureListener() {
-			@Override
-			public void onFailure(Exception e) {
-				showLog("cancel authorization failure：" + e.getClass().getSimpleName());
-			}
-		});
-	}
+//	private void cancelAuthorization() {
+//		if (mAuthService == null) {
+//			return;
+//		}
+//		Task<Void> task = mAuthService.cancelAuthorization();
+//		task.addOnSuccessListener(new OnSuccessListener<Void>() {
+//			@Override
+//			public void onSuccess(Void aVoid) {
+//				showLog("cancel authorization success");
+//			}
+//		});
+//		task.addOnFailureListener(new OnFailureListener() {
+//			@Override
+//			public void onFailure(Exception e) {
+//				showLog("cancel authorization failure：" + e.getClass().getSimpleName());
+//			}
+//		});
+//	}
 
 	private void showLog(String log) {
 		logTextView.setText(log);

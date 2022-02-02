@@ -8,13 +8,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.huawei.hms.ads.banner.BannerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/hw_banner_view"
-        hwads:adId="testw6vs28auh3"
-        hwads:bannerSize="BANNER_SIZE_360_57"
-        />
+<!--    <com.huawei.hms.ads.banner.BannerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/hw_banner_view"-->
+<!--        hwads:adId="testw6vs28auh3"-->
+<!--        hwads:bannerSize="BANNER_SIZE_360_57"-->
+<!--        />-->
 
     <TextView
         android:layout_width="match_parent"
@@ -36,7 +36,6 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="3dp"
             android:text="Balance: "
-            android:layout_below="@+id/name"
             android:textColor="@color/black"
             android:textSize="16sp"/>
 
@@ -47,7 +46,6 @@
             android:layout_toRightOf="@+id/price"
             android:layout_marginRight="3dp"
             android:textColor="@color/black"
-            android:layout_below="@+id/nameView"
             android:text="0"
             android:textSize="16sp"/>
 
