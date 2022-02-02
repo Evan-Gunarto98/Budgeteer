@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -76,7 +77,15 @@ public class AddTransaction extends AppCompatActivity {
     public void add(){
         Transaction transaction = new Transaction();
         transaction.name = txtName.getText().toString();
-        transaction.nominal = Integer.parseInt(txtNominal.getText().toString());
+
+        //biar ga overflow
+        try {
+            transaction.nominal = Integer.parseInt(txtNominal.getText().toString());
+        }
+        catch (Exception e) {
+            return;
+        }
+
         transaction.type = chooseType.getText().toString();
 
         transaction.date = getDate();
@@ -103,7 +112,13 @@ public class AddTransaction extends AppCompatActivity {
         }
 
         transaction.name = txtName.getText().toString();
-        transaction.nominal = Integer.parseInt(txtNominal.getText().toString());
+        //biar ga overflow
+        try {
+            transaction.nominal = Integer.parseInt(txtNominal.getText().toString());
+        }
+        catch (Exception e) {
+            return;
+        }
         transaction.type = chooseType.getText().toString();
         transaction.date = getDate();
 

@@ -18,6 +18,8 @@ import com.huawei.hms.ads.AdParam;
 import com.huawei.hms.ads.HwAds;
 import com.huawei.hms.ads.banner.BannerView;
 
+import java.math.BigInteger;
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvTransaction;
